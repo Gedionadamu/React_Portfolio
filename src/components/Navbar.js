@@ -19,4 +19,4 @@ function NavBar({setPage, page}) {
   </nav>
 }
 
-export default NavBar
+export default NavBar;

@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 
 
 function Container() {
-    // Here we declare a state boolean variable "loggedIn" and a function to update it.
+   
     
   
     const [page, setPage] = useState('HomePage');
@@ -37,7 +37,7 @@ function Container() {
       }
     }
   
-    // We return the Welcome component and pass loggedIn and setLoggedIn as props.
+    
     return (
       <>
         <NavBar setPage = {setPage} page ={page}/>
