@@ -1,47 +1,54 @@
 import React,{useState} from 'react';
-import NavBar from './header';
-import AboutMe from './pages/About me';
-import Footer from './footer';
-import Projects from './pages/Project'
+import NavBar from './Navbar';
+import AboutMe from './pages/AboutMe';
+import Footer from './Footer';
+import Projects from './pages/Project';
+import HomePage from './pages/HomePage';
+import Contact from './pages/Contact';
 
 
 
-//   export default function PortfolioContainer() {
-//     // const [currentPage, setCurrentPage] = useState('Home');
+
+function Container() {
+    // Here we declare a state boolean variable "loggedIn" and a function to update it.
+    
   
-//     // // This method is checking to see what the value of `currentPage` is. Depending on the value of currentPage, we return the corresponding component to render.
-//     // const renderPage = () => {
-//     //   if (currentPage === 'Home') {
-//     //     return <AboutMe />;
-//     //   }
-//     //   if (currentPage === 'projects') {
-//     //     return <Projects/>;
-//     //   }
-      
-//     //   return <Contact />;
-//     // };
+    const [page, setPage] = useState('HomePage');
   
-//     // const handlePageChange = (page) => setCurrentPage(page);
-//   return (
-//     <div>
-//       <NavBar />
-//       {/* {renderPage()} */}
-      
-//       <Footer/>
-      
-//     </div>)
-
-
-// }
-
-function test (){
+    const pageRender = (pageName) => {
+      switch (pageName) {
+        case 'HomePage':
+          return (
+            <HomePage />
+          );
+        case 'Projects':
+          return (
+            <Projects />
+          );
+        case 'AboutMe':
+          return (
+            <AboutMe />
+          );
+          case 'Contact':
+          return (
+            <Contact/>
+          );
+  
+      }
+    }
+  
+    // We return the Welcome component and pass loggedIn and setLoggedIn as props.
     return (
-    <div>
-    <NavBar/>
-    <AboutMe/>
-    <Projects/>
-    <Footer/>
-    </div>)
-}
+      <>
+        <NavBar setPage = {setPage} page ={page}/>
+        <main>
+          {pageRender(page)}
+        </main>
+        <Footer/>
+      </>
+    );
+  }
 
-export default test;
+
+
+export default Container;

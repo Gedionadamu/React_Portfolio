@@ -1,6 +1,6 @@
 import React from "react";
 
-function footer (){
+function Footer (){
     return <footer className=" d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-5">
   
      <ul className="nav col-md-12 justify-content-center ">
@@ -15,4 +15,4 @@ function footer (){
     </ul>
   </footer>
 }
-export default footer
+export default Footer;
